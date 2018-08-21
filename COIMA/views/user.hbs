@@ -1,0 +1,39 @@
+{{>navBar}}
+<div class="container-fluid search-content">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h3 style="color: #ffffff;">Comments</h3>
+        <ul>
+            {{#each comments}}
+                <li>
+                    <p> <a href="/movie/{{movieId}}">Movie= {{title}}</a></p>
+                    <p>comment= {{comment}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+    <span style="font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776; My comments</span>
+    <h1>Your favourite movies!</h1>
+    <div id="lstpainel">
+        <div class="addLst">
+            <input  type="text" id="lstName" class="form-control input-sm chat-input" placeholder="new list" required />
+            <button id ="addLstbtn" class="btn btn-lg btn-primary btn-block" type="submit">Create new List</button>
+        </div>
+        <div class="container">
+            <div id = "lstRow" class="row">
+                {{#each list}}
+                    {{>favouriteList}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{#if list}}
+        {{> prev_next_user}}
+    {{/if}}
+</div>
+
+
+
+
+
+
